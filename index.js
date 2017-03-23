@@ -1,10 +1,8 @@
-module.exports = (expose, update) => {
-
-  expose('clientRouter', 'get');
+module.exports = (update, environments) => {
 
   // Event for back and forward through history
   window.onpopstate = function(request) {
-    update('clientRouter', 'get', { url });
+    update(environments, 'get', url, { url });
   };
 
   // Listen to all the elements on a page that have a relative path
@@ -18,7 +16,7 @@ module.exports = (expose, update) => {
           event.preventDefault();
           const url = link.getAttribute('href');
           history.pushState({ url }, url, url);
-          update('clientRouter', 'get', { url });
+          update(environments, 'get', url, { url });
         });
       }
     });
