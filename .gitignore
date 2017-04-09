@@ -1,5 +1,5 @@
 # Created by https://www.gitignore.io/api/node
-
+.source*
 
 # Created by https://www.gitignore.io/api/windows,linux,macos,node
 

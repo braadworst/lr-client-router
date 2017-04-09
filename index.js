@@ -1,11 +1,8 @@
-module.exports = (update, options) => {
+module.exports = update => {
 
   // Event for back and forward through history
   window.onpopstate = function(request) {
-    update(
-      Object.assign({}, options, { path : request.state.url, method : 'get'}),
-      request.state
-    );
+    update({ matchValue : request.state.url }, request.state);
   };
 
   // Listen to all the elements on a page that have a relative path
@@ -19,10 +16,7 @@ module.exports = (update, options) => {
           event.preventDefault();
           const url = link.getAttribute('href');
           history.pushState({ url }, url, url);
-          update(
-            Object.assign({}, options, { path : url, method : 'get'}),
-            { url }
-          );
+          update({ matchValue : url }, { url });
         });
       }
     });
@@ -30,6 +24,7 @@ module.exports = (update, options) => {
   return {
     redirect(url) {
       history.pushState({ url }, url, url);
+      update({ matchValue : url }, { url });
     }
   };
 }
