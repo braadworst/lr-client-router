@@ -1,6 +1,6 @@
 # lg-client-router reference
 
-The _lr-core_ package is the only mandatory package for Lagoon road. This package connects everything together, regardless of environment. There are eight exposed functions that you can use.
+A Lagoon road extension that gives you route functionality on the client.
 
 | Information | - |
 | ----------- | - |
@@ -14,4 +14,24 @@ The _lr-core_ package is the only mandatory package for Lagoon road. This packag
 
 ---
 
-### core(environmentId, [options])
+### Adding the extesion to lagoon road
+
+```
+const router   = require('lg-client-router');
+const core     = require('lr-core');
+const road     = core('client')
+  .extension('router', router, true);
+```
+
+---
+
+### router.redirect(path)
+
+```
+router.redirect('/some-page');
+```
+
+**path:string**  
+The path to where you want to redirect, this will trigger an update event on the road.
+
+---
