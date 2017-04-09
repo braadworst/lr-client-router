@@ -14,7 +14,7 @@ A Lagoon road extension that gives you route functionality on the client.
 
 ---
 
-### Adding the extesion to lagoon road
+### Adding the extension to lagoon road
 
 ```
 const router   = require('lg-client-router');
