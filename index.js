@@ -1,9 +1,11 @@
 module.exports = update => {
 
   document.addEventListener('click', event => {
-    if (event.target.nodeName.toLowerCase() === 'a' && event.target.pathname[0] === '/') {
+    if (event.target.nodeName.toLowerCase() === 'a' &&
+        event.target.getAttribute('href') &&
+        event.target.getAttribute('href')[0] === '/') {
       event.preventDefault();
-      const url = event.target.pathname;
+      const url = event.target.getAttribute('href');
       history.pushState({ url }, url, url);
       update({ matchValue : url }, { url });
     }
@@ -11,7 +13,9 @@ module.exports = update => {
 
   // Event for back and forward through history
   window.onpopstate = function(request) {
-    update({ matchValue : request.state.url }, request.state);
+    if (request && request.state && request.state.url) {
+      update({ matchValue : request.state.url }, request.state);
+    }
   };
 
   return {
