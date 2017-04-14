@@ -1,4 +1,4 @@
-# lg-client-router reference
+# lr-client-router reference
 
 A Lagoon road extension that gives you route functionality on the client.
 
@@ -10,14 +10,14 @@ A Lagoon road extension that gives you route functionality on the client.
 | Size (Browserify, Babel, Uglify and Gzip)| 639 bytes |
 | Version | 1.0.0 |
 | License | MIT |
-| Usage | [lagoonroad.com/guide](https://www.lagoonroad.com/guide) |
+| Usage | [guide](https://lagoonroad.com/guide) |
 
 ---
 
 ### Adding the extension to lagoon road
 
 ```
-const router   = require('lg-client-router');
+const router   = require('lr-client-router');
 const core     = require('lr-core');
 const road     = core('client')
   .extension('router', router, true);
