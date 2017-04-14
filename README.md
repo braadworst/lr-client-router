@@ -7,7 +7,7 @@ A Lagoon road extension that gives you route functionality on the client.
 | Code coverage | - |
 | Repo link | [lr-client-router](https://github.com/lagoon-road/lr-client-router) |
 | Dependencies | - |
-| Size (Browserify, Babel, Uglify and Gzip)| 639 bytes |
+| Size (Browserify, Babel and Gzip)| 632 bytes |
 | Version | 1.0.0 |
 | License | MIT |
 | Usage | [guide](https://lagoonroad.com/guide) |
