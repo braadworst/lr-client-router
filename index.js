@@ -8,6 +8,7 @@ module.exports = update => {
       const url = event.target.getAttribute('href');
       history.pushState({ url }, url, url);
       update({ matchValue : url }, { url });
+      window.scrollTo(0, 0);
     }
   });
 
