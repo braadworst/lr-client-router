@@ -18,8 +18,8 @@ A Lagoon road extension that gives you route functionality on the client.
 
 ```
 const router   = require('lr-client-router');
-const core     = require('lr-core');
-const road     = core('client')
+const road     = require('lr-main')('client');
+road
   .extension('router', router, true);
 ```
 
